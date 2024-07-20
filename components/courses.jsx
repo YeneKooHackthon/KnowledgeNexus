@@ -1,3 +1,7 @@
+"use client";
+
+import Image from "next/image";
+
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -16,12 +20,11 @@ import {
   SelectContent,
   SelectItem,
 } from "@/components/ui/select";
-import Image from "next/image";
 
 export default function Courses() {
   return (
-    <div className="flex flex-col h-full">
-      <section className="w-full overflow-hidden py-12 md:py-24 lg:py-32 bg-gradient-to-r from-primary to-primary-foreground">
+    <div className="flex flex-col min-h-dvh ">
+      <section className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-r from-primary to-primary-foreground">
         <div className="container px-4 md:px-6 grid gap-8 md:grid-cols-2 items-center">
           <div className="space-y-4">
             <h1 className="text-4xl font-bold text-primary-foreground sm:text-5xl md:text-6xl">

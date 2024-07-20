@@ -16,15 +16,19 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
+import { useSearchParams } from "next/navigation";
 
 export default function Search() {
   const [qst, setQST] = useState(null);
+  const searchParams = useSearchParams();
+
+  const agentPram = searchParams.get("agent");
 
   return (
     <main className="w-full py-3 h-full flex flex-col justify-between items-center relative">
       <div className="pb-[5em] md:pb-[10em] flex h-full flex-col gap-4 w-[97.5%] md:w-[50em] items-center justify-center md:p-24">
-        <Label className="md:pb-4 pb-2 md:text-5xl text-[7vw]">
-          KnowledgeNexus
+        <Label className="md:pb-4 pb-2 md:text-5xl text-[7vw] font-semibold">
+          {agentPram ?? "KnowledgeNexus"}
         </Label>
         <div className="w-full h-auto  p-1 pb-2 border-2 border-primary rounded-lg flex flex-col gap-4">
           <Textarea

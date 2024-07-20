@@ -1,50 +1,53 @@
+"use client";
+
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Agents() {
   const agents = [
     {
-      name: "Biologiyes",
+      name: "BiolNexus",
       skill: "Expert on cell biology",
       imgSrc:
         "https://www.advancedsciencenews.com/wp-content/uploads/2018/01/butterfly_robot_hanD_001.jpg",
     },
     {
-      name: "Mathematica",
+      name: "MathNexus",
       skill: "Specialist in algebra and calculus",
       imgSrc:
         "https://as1.ftcdn.net/v2/jpg/01/01/27/08/1000_F_101270840_fpP2jgWBoWxTCfmO2RWOfUsQUAtpc1t7.jpg",
     },
     {
-      name: "Physica",
+      name: "PhyNexus",
       skill: "Expert in quantum mechanics",
       imgSrc: "https://gamma.cs.unc.edu/PROBOT/naorobot.png",
     },
     {
-      name: "Chemistra",
+      name: "ChemiNexus",
       skill: "Organic chemistry specialist",
       imgSrc:
         "https://d2cbg94ubxgsnp.cloudfront.net/Pictures/2000xAny/1/3/3/132133_robot_chemist_shutterstock_645091624.jpg",
     },
     {
-      name: "Informatica",
+      name: "InformaticaNexus",
       skill: "Data science and AI expert",
       imgSrc:
         "https://astroninformatica.es/wp-content/uploads/2021/03/robot-foto_0.jpg",
     },
     {
-      name: "Historians",
+      name: "HistoNexus",
       skill: "Medieval history expert",
       imgSrc:
         "https://ecorobotics.com/wp-content/uploads/2021/05/adobestock_192033032.jpg",
     },
     {
-      name: "Literatura",
+      name: "LiteraNexus",
       skill: "Shakespearean literature expert",
       imgSrc:
         "https://img.freepik.com/premium-photo/robot-studying-with-books-outdoors_582637-6704.jpg",
     },
     {
-      name: "Economica",
+      name: "EcoNexus",
       skill: "Macroeconomics specialist",
       imgSrc:
         "https://img.freepik.com/fotos-premium/ai-generado-ilustracion-hombres-robot-pie-moneda-economica-grafico-ascendente-luz-neon-lleno_961747-369.jpg",
@@ -59,7 +62,8 @@ export default function Agents() {
         </h1>
         <div className="mt-4 grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           {agents.map((agent, index) => (
-            <div
+            <Link
+              href={`/home?agent=${agent?.name}`}
               key={index}
               className="rounded-lg border border-gray-200 bg-white p-4 shadow-sm transition-all hover:scale-105 hover:shadow-md dark:border-gray-700 dark:bg-gray-900"
             >
@@ -78,7 +82,7 @@ export default function Agents() {
                   {agent.skill}
                 </p>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
