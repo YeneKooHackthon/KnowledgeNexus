@@ -3,12 +3,12 @@ import { MDXRemote } from "next-mdx-remote/rsc";
 import { Input } from "@/components/ui/input";
 import { FilePlus } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import DetailsPageInput from "./detailsPageInput";
 
-export default function LearnDetails() {
+export default async function LearnDetails() {
   const videoId1 = "wdQH-SfdxjQ";
   const videoId2 = "wdQH-SfdxjQ";
   const videoId3 = "wdQH-SfdxjQ";
-
   const pdfUrl = "https://arxiv.org/pdf/1706.03762v5";
 
   // Generate Markdown content with embedded PDF
@@ -50,16 +50,7 @@ To embed a PDF document in Markdown, use an HTML \`<iframe>\` or \`<object>\`:
         <MDXRemote source={markdownContent} />
       </article>
       <div className=" bg-white fixed bottom-0 w-[97.5%] md:container h-[5em] flex justify-center flex-col items-center gap-1 md:w-full">
-        <div className="max-w-3xl flex w-full h-[80%] pt-1  items-center space-x-2">
-          <Input
-            type="text"
-            placeholder="Type your follow up question..."
-            className="h-full"
-          />
-          <Button type="submit" className="h-full">
-            <FilePlus />
-          </Button>
-        </div>
+        <DetailsPageInput />
         <h2 className=" text-gray-400 text-[10px] md:text-sm">
           KNexus can make mistakes. Check important info.
         </h2>

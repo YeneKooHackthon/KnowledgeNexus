@@ -31,12 +31,12 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 const links = [
   { href: "/home", label: "Home", icons: <House /> },
-  { href: "#abcd", label: "History", icons: <FileClock /> },
-  { href: "#abcd", label: "Agent", icons: <Bot /> },
-  { href: "#noprograms-for-now", label: "Programs", icons: <Library /> },
-  { href: "#abcd", label: "Content", icons: <LayoutPanelTop /> },
+  { href: "/agents", label: "Agents", icons: <Bot /> },
+  { href: "/programs", label: "Programs", icons: <Library /> },
+  { href: "/history", label: "History", icons: <FileClock /> },
+  { href: "/aboutus", label: "About US", icons: <LayoutPanelTop /> },
   // { href: "#abcd", label: "Profile", icons: <User /> },
-  { href: "#abcd", label: "Settings", icons: <Settings /> },
+  { href: "/account", label: "Account", icons: <Settings /> },
 ];
 
 const clss_active =
@@ -50,16 +50,19 @@ export function SideBar() {
   return (
     <aside className="w-[15vw] h-full bg-secondary-foreground text-white flex-shrink-0">
       <div className="p-4 flex h-full w-full flex-col justify-between">
-        <div className="h-[6em] flex justify-center gap-2 items-center">
+        <Link
+          href="/home"
+          className="h-[6em] flex justify-center gap-2 items-center"
+        >
           <LibraryBig className="text-primary scale-x-[-1]" size={40} />
           <h1 className="text-2xl font-semibold">KNexus</h1>
-        </div>
+        </Link>
         <ul className="mt-4 h-full">
           {links.map((link) => (
             <li key={link.label}>
               <Link
                 href={link.href}
-                className={path == link.href ? clss_active : clss}
+                className={path.startsWith(link.href) ? clss_active : clss}
               >
                 {link.icons}
                 <Label>{link.label}</Label>
@@ -95,7 +98,9 @@ export function MobileSideBar() {
                   <SheetClose asChild>
                     <Link
                       href={link.href}
-                      className={path == link.href ? clss_active : clss}
+                      className={
+                        path.startsWith(link.href) ? clss_active : clss
+                      }
                     >
                       {link.icons}
                       <Label>{link.label}</Label>
