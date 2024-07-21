@@ -18,6 +18,8 @@ import Link from "next/link";
 import { useState } from "react";
 import { useSearchParams } from "next/navigation";
 
+import { Input } from "@/components/ui/input";
+
 export default function Search() {
   const [qst, setQST] = useState(null);
   const searchParams = useSearchParams();
@@ -37,9 +39,24 @@ export default function Search() {
             className="border-none h-auto bg-transparent text-sm font-medium resize-y placeholder:text-gray-400"
           />
           <div className="px-2 w-full flex justify-between items-center">
-            <Button variant="ghost" className=" gap-2 p-2 hover:bg-primary/20">
+            <div className="">
+              <Label
+                htmlFor="pdf"
+                className="flex gap-2 justify-center items-center rounded-md p-2 hover:bg-primary/20"
+              >
+                <Paperclip size={20} /> Attach PDF
+              </Label>
+              <Input
+                id="pdf"
+                accept="application/pdf"
+                type="file"
+                className="hidden"
+              />
+            </div>
+
+            {/* <Button variant="ghost" className=" gap-2 p-2 hover:bg-primary/20">
               <Paperclip size={20} /> Attach PDF
-            </Button>
+            </Button> */}
             <Link href={`/home/details?qst=${qst}`}>
               <Button className="gap-2 p-2 hover:bg-primary/20" variant="ghost">
                 <CircleArrowRight size={25} />
