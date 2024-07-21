@@ -10,7 +10,7 @@ export default async function LearnDetails() {
   const videoId2 = "URUJD5NEXC8&pp=ygUMY2VsbCBiaW9sb2d5";
   const videoId3 = "t5DvF5OVr1Y&pp=ygUMY2VsbCBiaW9sb2d5";
   const pdfUrl =
-    "http://www.bio-nica.info/Biblioteca/Bolsover2004CellBiology.pdf";
+    "https://www.kgmu.org/download/virtualclass/biochemistry/Lecture_Cell_Biology.pdf";
 
   // Generate Markdown content with embedded PDF
   const markdownContent = `
